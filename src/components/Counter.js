@@ -9,18 +9,21 @@ export default class Counter extends Component {
         step: 1,
     };
 
-    // truco() {
-    //     if(this.state.count < 12)
-    //     this.setState({ count: this.state.count +3 });
-    // };
+    truco() {
+        if (this.state.count < this.props.limite)
+        // if(this.state.count < 12)
+        this.setState({ count: this.state.count +3 });
+    };
 
     incrementar() {
-        if(this.state.count < 12)
+        if (this.state.count < this.props.limite)
+        // if(this.state.count < 12)
         this.setState({ count: this.state.count + this.state.step });
     };
     
     decrementar() {
-        if(this.state.count > 0)
+        if (this.state.count > this.props.limitezero)
+        // if(this.state.count > 0)
         this.setState({ count: this.state.count - this.state.step });
     };
 
@@ -50,7 +53,7 @@ export default class Counter extends Component {
         <Text>Contador: {this.state.count}</Text>
         <Button onPress={() => this.incrementar()} title="+" />
         <Button onPress={() => this.decrementar()} title="-" />
-        {/* <Button onPress={() => this.truco()} title="Truco" /> */}
+        <Button onPress={() => this.truco()} title="Truco" />
         </View>
         );
     }
